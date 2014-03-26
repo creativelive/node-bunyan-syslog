@@ -12,18 +12,18 @@ var bunyan = require('bunyan');
 var bsyslog = require('bunyan-syslog');
 
 var log = bunyan.createLogger({
-	name: 'foo',
-	streams: [ {
-		level: 'debug',
-		type: 'raw',
-		stream: bsyslog.createBunyanStream({
-			type: 'sys',
-			facility: bsyslog.local0,
-			host: '192.168.0.1',
-			port: 514,
+    name: 'foo',
+    streams: [ {
+        level: 'debug',
+        type: 'raw',
+        stream: bsyslog.createBunyanStream({
+            type: 'sys',
+            facility: bsyslog.local0,
+            host: '192.168.0.1',
+            port: 514,
             msgOnly: true
-		})
-	}]
+        })
+    }]
 });
 
 log.debug({foo: 'bar'}, 'hello %s', 'world');
