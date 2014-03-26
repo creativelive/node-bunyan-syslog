@@ -20,13 +20,19 @@ var log = bunyan.createLogger({
 			type: 'sys',
 			facility: bsyslog.local0,
 			host: '192.168.0.1',
-			port: 514
+			port: 514,
+            msgOnly: true
 		})
 	}]
 });
 
 log.debug({foo: 'bar'}, 'hello %s', 'world');
 ```
+
+## Options
+If you need to bypass the default JSON encoding of the log format for raw, pass
+in `msgOnly=true` in the stream options.
+
 That's pretty much it.  You create a syslog stream, and point it at a syslog
 server (UDP by default; you can force TCP by setting `type: tcp` in the
 constructor); default is to use facility `user` and a syslog server on
