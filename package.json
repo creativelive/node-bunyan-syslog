@@ -1,7 +1,7 @@
 {
   "name": "@creativelive/bunyan-syslog",
   "description": "Syslog Stream for Bunyan",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "Mark Cavage",
   "license": "MIT",
   "main": "./lib/index.js",
